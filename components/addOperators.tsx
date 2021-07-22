@@ -3,36 +3,61 @@ import Operator from "./operator";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import { IOperator } from "../interfaces/interfaces";
+import { useRouter } from "next/dist/client/router";
+
 
 export default function AddForm() {
+  const router = useRouter();
+  const [name, setName] = useState<string>("");
+  const [picture, setPicture] = useState<string>("");
 
+  function handleChangeName(event) {
+    setName(event.target.value);
+  }
+
+  function handleChangePicture(event) {
+    setPicture(event.target.value);
+  }
+
+  async function ButtonPut() {
+    let response = await fetch("http://localhost:3000/operator", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        id: name,
+        name: name,
+        picture: picture,
+      }),
+    });
     
+  }
 
   return (
-      <form className={styles.payForm}>
-        <span className={styles.payForm__span}>Оператор</span>
-        <input
-          type="string"
-          required
-          placeholder="Название оператора"
-          className={styles.payForm__input}
-        //   value={name}
-        //   onChange={handleEditName}
-        />
-        <span className={styles.payForm__span}>Логотип</span>
-        <input
-          type="link"
-          required
-          placeholder="Ссылка на логотип"
-          pattern="https?:\/\/(www.)?(\w*\W*)*"
-          className={styles.payForm__input}
-        //   value={link}
-        //   onChange={handleEditLink}
-        />
-        <button type="submit" className={styles.payForm__button}>
-          Добавить
-        </button>
-      </form>
+    <form className={styles.addForm} onSubmit={ButtonPut}>
+      <span className={styles.addForm__span}>Оператор</span>
+      <input
+        type="string"
+        required
+        placeholder="Название оператора"
+        className={styles.addForm__input}
+        value={name}
+        onChange={handleChangeName}
+      />
+      <span className={styles.addForm__span}>Логотип</span>
+      <input
+        type="link"
+        required
+        placeholder="Ссылка на логотип"
+        pattern="https?:\/\/(www.)?(\w*\W*)*"
+        className={styles.addForm__input}
+        value={picture}
+        onChange={handleChangePicture}
+      />
+      <button type="submit" className={styles.addForm__button}>
+        Добавить
+      </button>
+    </form>
   );
 }

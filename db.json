@@ -1,24 +1,34 @@
 {
-    "operator": [
-      {
-        "id": "Megafon",
-        "name": "Megafon",
-        "picture": "https://p0.zoon.ru/preview/eFrcwNAofPlRf-1yoAN6UQ/2400x1500x85/1/4/3/original_55563a2540c0888f7a8ca99b_5c8b46963d936.jpg"
-      },
-      {
-        "id": "MTC",
-        "name": "MTC",
-        "picture": "https://static.tildacdn.com/tild6266-3839-4161-a532-653536663666/photo.jpg"
-      },
-      {
-        "id": "Beeline",
-        "name": "Beeline",
-        "picture": "https://mobile-1s.ru/wp-content/uploads/d/d/2/dd2eb597fc5cde849406ce81854be854.jpg"
-      },
-      {
-        "name": "Yota",
-        "picture": "https://mobile-1s.ru/wp-content/uploads/b/9/7/b979c2e5efa53aa423a882c60c28bf3a.png",
-        "id": "Yota"
-      }
-    ]
-  }
+  "operator": [
+    {
+      "id": "Megafon",
+      "name": "Megafon",
+      "picture": "https://p0.zoon.ru/preview/eFrcwNAofPlRf-1yoAN6UQ/2400x1500x85/1/4/3/original_55563a2540c0888f7a8ca99b_5c8b46963d936.jpg"
+    },
+    {
+      "id": "MTC",
+      "name": "MTC",
+      "picture": "https://static.tildacdn.com/tild6266-3839-4161-a532-653536663666/photo.jpg"
+    },
+    {
+      "id": "Beeline",
+      "name": "Beeline",
+      "picture": "https://mobile-1s.ru/wp-content/uploads/d/d/2/dd2eb597fc5cde849406ce81854be854.jpg"
+    },
+    {
+      "name": "Yota",
+      "picture": "https://mobile-1s.ru/wp-content/uploads/b/9/7/b979c2e5efa53aa423a882c60c28bf3a.png",
+      "id": "Yota"
+    },
+    {
+      "id": "asas",
+      "name": "asas",
+      "picture": "https://sun9-37.userapi.com/impg/WVcuti_GTDqLXb_wEQiV2xKErn_r66e5gQfGug/woFhIKoAoTA.jpg?size=1200x628&quality=96&sign=f99cd5817a622c3038ad92c104c86834&type=album"
+    },
+    {
+      "id": "Anime",
+      "name": "Anime",
+      "picture": "http://pm1.narvii.com/7690/1b8abd3956d572700a37e0c815e6f5d674cf3505r1-800-800v2_uhq.jpg"
+    }
+  ]
+}

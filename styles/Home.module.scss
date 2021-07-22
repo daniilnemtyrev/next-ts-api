@@ -1,0 +1,206 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #7b1fa2;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.operator {
+  margin: 1rem;
+  text-decoration: none;
+  border-radius: 10px;
+  max-width: 150px;
+  max-height: 90px;
+  background-color: #000000;
+
+  &__img {
+    width: 150px;
+    height: 90px;
+    border-radius: 10px;
+    //transition: all 0.3s ease-in-out 0.3s;
+  }
+  &__img:hover {
+    border: 3px solid #7b1fa2;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all 0.2s ease 0s;
+  }
+  &__imgPay {
+    width: 150px;
+    min-height: 90px;
+    border-radius: 10px;
+    border: 2px solid #7b1fa2;
+  }
+}
+
+.main {
+  width: 60%;
+  background: #f3e5f5;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  &__tabs {
+    padding-bottom: 10px;
+    height: 42px;
+    width: 311px;
+    margin-bottom: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  &__tabsButton {
+    font-size: 20px;
+    font-style: normal;
+    line-height: 33px;
+    letter-spacing: 0em;
+    background: #f3e5f5;
+    color: #ce93d8;
+    border: none;
+  }
+
+  &__tabsButton:hover {
+    color: #ab47bc;
+    cursor: pointer;
+    border-bottom: 3px solid #ab47bc;
+  }
+
+  &__tabsButtonActive {
+    font-size: 20px;
+    font-style: normal;
+    line-height: 33px;
+    letter-spacing: 0em;
+    background: #f3e5f5;
+    color: #ab47bc;
+    border-bottom: 3px solid #ab47bc;
+  }
+}
+
+.addForm {
+  width: 70%;
+  background: #f3e5f5;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  border-radius: 10px;
+  &__input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #7b1fa2;
+    background-color: #f3e5f5;
+  }
+  &__button {
+    padding: 5px;
+    background-color: #ce93d8;
+    border-radius: 40px;
+    box-shadow: none;
+    border: none;
+    width: 20%;
+    font-weight: 600;
+  }
+  &__button:hover {
+    background-color: #ab47bc;
+    cursor: pointer;
+  }
+  &__span {
+    text-align: left;
+    font-weight: 600;
+  }
+}
+
+.paymentForm {
+  width: 70%;
+  background: #f3e5f5;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  border-radius: 10px;
+  &__input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #7b1fa2;
+    background-color: #f3e5f5;
+  }
+  &__button {
+    padding: 5px;
+    background-color: #ce93d8;
+    border-radius: 40px;
+    box-shadow: none;
+    border: none;
+    width: 20%;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  &__button:hover {
+    background-color: #ab47bc;
+  }
+  &__span {
+    text-align: left;
+    font-weight: 600;
+  }
+}
+
+.payResult{
+    display: none;
+
+}
+
+.payResultActive {
+    margin-top: 20px;
+    display: block;
+}
+
+.payResultFalse {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    border: 2px solid red;
+    text-align: center;
+    &__span {
+        color:red;
+        font-size: 10px;
+    }
+}
+
+.payResultTrue {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    border: 2px solid green;
+    text-align: center;
+    &__span {
+        color:green;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}

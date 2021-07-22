@@ -17,10 +17,10 @@ export default function Main({ children}: IChildren) {
       <main className={styles.main}>
         <div className={styles.main__tabs}>
           <Link href={"/"}>
-            <a className={styles.main__tabsButton}>Операторы</a>
+            <a className={router.route=="/"? styles.main__tabsButtonActive : styles.main__tabsButton}>Операторы</a>
           </Link>
           <Link href={"/add"}>
-            <a className={styles.main__tabsButton}>Добавить</a>
+            <a className={router.route=="/add"? styles.main__tabsButtonActive : styles.main__tabsButton}>Добавить</a>
           </Link>
         </div>
         <h1 className={styles.title}>{router.route!=="/add"?`Пополнение баланса ${router.query.id==undefined?'':router.query.id}`:`Добавление оператора`}</h1>
