@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4000",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "json-server db.json -w"
+    "server": "json-server db.json -w -p 4000"
   },
   "dependencies": {
     "json-server": "0.16.3",
