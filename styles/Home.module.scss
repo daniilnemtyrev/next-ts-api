@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background: #7b1fa2;
 }
 
@@ -24,18 +23,18 @@
   border-radius: 10px;
   max-width: 150px;
   max-height: 90px;
-  background-color: #000000;
 
   &__img {
+    border: 1px solid #7b1fa2;
     width: 150px;
     height: 90px;
     border-radius: 10px;
-    //transition: all 0.3s ease-in-out 0.3s;
+    transition: all 0.2s ease-in-out 0s;
   }
   &__img:hover {
     border: 3px solid #7b1fa2;
     cursor: pointer;
-    opacity: 0.9;
+    transform: scale(1.2);
     transition: all 0.2s ease 0s;
   }
   &__imgPay {
@@ -46,7 +45,7 @@
   }
 }
 
-.main {
+.general {
   width: 60%;
   background: #f3e5f5;
   padding: 30px;
@@ -74,8 +73,7 @@
     font-style: normal;
     line-height: 33px;
     letter-spacing: 0em;
-    background: #f3e5f5;
-    color: #ce93d8;
+    color: #bb75ee;
     border: none;
   }
 
@@ -83,20 +81,23 @@
     color: #ab47bc;
     cursor: pointer;
     border-bottom: 3px solid #ab47bc;
+    border-radius: 4px;
   }
 
   &__tabsButtonActive {
     font-size: 20px;
-    font-style: normal;
-    line-height: 33px;
-    letter-spacing: 0em;
     background: #f3e5f5;
     color: #ab47bc;
     border-bottom: 3px solid #ab47bc;
+    border-radius: 4px;
+  }
+
+  &__title {
+    font-size: 30px;
   }
 }
 
-.addForm {
+.addOperator {
   width: 70%;
   background: #f3e5f5;
   padding: 30px;
@@ -110,23 +111,6 @@
     border: none;
     border-bottom: 2px solid #7b1fa2;
     background-color: #f3e5f5;
-  }
-  &__button {
-    padding: 5px;
-    background-color: #ce93d8;
-    border-radius: 40px;
-    box-shadow: none;
-    border: none;
-    width: 20%;
-    font-weight: 600;
-  }
-  &__button:hover {
-    background-color: #ab47bc;
-    cursor: pointer;
-  }
-  &__span {
-    text-align: left;
-    font-weight: 600;
   }
 }
 
@@ -145,62 +129,148 @@
     border-bottom: 2px solid #7b1fa2;
     background-color: #f3e5f5;
   }
-  &__button {
-    padding: 5px;
-    background-color: #ce93d8;
-    border-radius: 40px;
-    box-shadow: none;
-    border: none;
-    width: 20%;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  &__button:hover {
-    background-color: #ab47bc;
-  }
-  &__span {
-    text-align: left;
-    font-weight: 600;
-  }
 }
 
-.payResult{
-    display: none;
-
+.payResult {
+  display: none;
 }
 
 .payResultActive {
-    margin-top: 20px;
-    display: block;
+  margin-top: 20px;
+  display: block;
 }
 
 .payResultFalse {
-    border-radius: 10px;
-    width: 200px;
-    height: 30px;
-    border: 2px solid red;
-    text-align: center;
-    &__span {
-        color:red;
-        font-size: 10px;
-    }
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  border: 2px solid red;
+  text-align: center;
+  &__span {
+    color: red;
+    font-size: 10px;
+  }
 }
 
 .payResultTrue {
-    border-radius: 10px;
-    width: 200px;
-    height: 30px;
-    border: 2px solid green;
-    text-align: center;
-    &__span {
-        color:green;
-        font-size: 10px;
-    }
+  border-radius: 10px;
+  width: 200px;
+  height: 30px;
+  border: 2px solid green;
+  text-align: center;
+  &__span {
+    color: green;
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 600px) {
   .grid {
-    width: 100%;
+    display: block;
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .operator {
+    &__img {
+      margin-bottom: 20px;
+    }
+  }
+
+  .general {
+    width: 80%;
+    justify-content: center;
+    text-align: center;
+    &__tabs {
+      height: 42px;
+      width: 200px;
+      margin-bottom: 48px;
+    }
+
+    &__tabsButton {
+      font-size: 15px;
+    }
+    &__tabsButtonActive {
+      font-size: 15px;
+    }
+    &__title {
+      font-size: 20px;
+    }
+  }
+  .addOperator {
+    width: 100%;
+    &__input {
+      font-size: 10px;
+    }
+    &__button {
+      width: 100%;
+    }
+  }
+
+  .paymentForm {
+    width: 100%;
+    &__button {
+      width: 100%;
+    }
+  }
+
+  .payResultFalse {
+    width: 100%;
+    height: 50px;
+    align-items: center;
+  }
+
+  .payResultTrue {
+    width: 100%;
+    height: 30px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .operator {
+    &__img {
+      margin-bottom: 20px;
+    }
+  }
+
+  .general {
+    width: 80%;
+    justify-content: center;
+    text-align: center;
+    &__tabs {
+      height: 42px;
+      width: 200px;
+      margin-bottom: 48px;
+    }
+
+    &__tabsButton {
+      font-size: 15px;
+    }
+    &__tabsButtonActive {
+      font-size: 15px;
+    }
+    &__title {
+      font-size: 20px;
+    }
+  }
+  .addOperator {
+    width: 100%;
+    &__button {
+      width: 100%;
+    }
+  }
+
+  .paymentForm {
+    width: 100%;
+    &__button {
+      width: 100%;
+    }
   }
 }

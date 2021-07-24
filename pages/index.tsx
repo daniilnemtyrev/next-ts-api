@@ -1,11 +1,12 @@
-import Main from "../components/main";
-import Grid from "../components/gridOperators";
+import General from "../components/general";
+import GridOperators from "../components/gridOperators";
 
-export default function Home() {
+const Home = () => {
   return (
-    <Main>
-      <Grid></Grid>
-    </Main>
+    <General>
+      <GridOperators/>
+    </General>
   );
 }
 
+export default Home;

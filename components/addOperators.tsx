@@ -1,63 +1,71 @@
 import React from "react";
-import Operator from "./operator";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
-import { useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
+import { Button } from "../styled.components/styled.components";
+import { InputSpan } from "../styled.components/styled.components";
 
 
-export default function AddForm() {
+
+const AddOperator = () => {
   const router = useRouter();
   const [name, setName] = useState<string>("");
-  const [picture, setPicture] = useState<string>("");
+  const [pictureUrl, setPictureUrl] = useState<string>("");
 
-  function handleChangeName(event) {
+  const handleChangeNameOperator = (event) => {
     setName(event.target.value);
-  }
+  };
 
-  function handleChangePicture(event) {
-    setPicture(event.target.value);
-  }
+  const handleChangePictureUrlOperator = (event) => {
+    setPictureUrl(event.target.value);
+  };
 
-  async function ButtonPut() {
-    let response = await fetch("http://localhost:3000/operator", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify({
-        id: name,
-        name: name,
-        picture: picture,
-      }),
-    });
-    
-  }
+  const buttonPut = async () => {
+    router.push(`/`);
+    try {
+      await fetch("http://localhost:3000/operator", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+          id: name,
+          name: name,
+          pictureUrl: pictureUrl,
+        }),
+      });
+    } catch (error) {
+      console.error("Ошибка:", error);
+    }
+  };
 
+ 
   return (
-    <form className={styles.addForm} onSubmit={ButtonPut}>
-      <span className={styles.addForm__span}>Оператор</span>
+    <form className={styles.addOperator} onSubmit={buttonPut}>
+      <InputSpan>Оператор</InputSpan>
       <input
         type="string"
         required
         placeholder="Название оператора"
-        className={styles.addForm__input}
+        className={styles.addOperator__input}
         value={name}
-        onChange={handleChangeName}
+        onChange={handleChangeNameOperator}
       />
-      <span className={styles.addForm__span}>Логотип</span>
+      <InputSpan>Логотип</InputSpan>
       <input
         type="link"
         required
         placeholder="Ссылка на логотип"
         pattern="https?:\/\/(www.)?(\w*\W*)*"
-        className={styles.addForm__input}
-        value={picture}
-        onChange={handleChangePicture}
+        className={styles.addOperator__input}
+        value={pictureUrl}
+        onChange={handleChangePictureUrlOperator}
       />
-      <button type="submit" className={styles.addForm__button}>
+      <Button>
         Добавить
-      </button>
+      </Button>
     </form>
   );
-}
+};
+
+export default AddOperator;

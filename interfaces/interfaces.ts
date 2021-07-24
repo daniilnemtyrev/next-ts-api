@@ -1,9 +1,10 @@
 import { NextPageContext } from "next";
 
 export interface IOperator{
-	id: string | number
+	id: string
 	name: string
-	picture: string
+	pictureUrl: string
+	
 }
 
 export interface IChildren {

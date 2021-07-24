@@ -1,24 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "../../styles/Home.module.css";
-import Main from "../../components/main";
+import General from "../../components/general";
 import Pay from "../../components/payOperator";
 import { IOperatorPay } from "../../interfaces/interfaces";
 import { IOperator } from "../../interfaces/interfaces";
 
-function OperatorId({ operator }) {
-
-
+const OperatorId = ({ operator }) => {
+   
   return (
-    <Main>
+    <General>
       <>
         <img
           className={styles.operator__imgPay}
-          src={operator.picture}
+          src={operator.pictureUrl}
           alt={operator.name}
         ></img>
         <Pay />
       </>
-    </Main>
+    </General>
   );
 }
 

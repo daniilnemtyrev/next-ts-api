@@ -2,44 +2,41 @@ import { useRouter } from "next/dist/client/router";
 import InputMask from "react-input-mask";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
-import { PayResult } from "./payResult";
+import PayResult from "./payResult"
+import { Button, InputSpan } from "../styled.components/styled.components";
 
-export default function Pay() {
+const Pay = () => {
   const router = useRouter();
-  const [number, setNumber] = useState<string>("");
-  const [sum, setSum] = useState<number>(0);
-  const [result, setResult] = useState<boolean>(false);
-  const [state, setState] = useState<boolean>(false);
+  const [number, setNumberPhone] = useState<string>("");
+  const [sum, setSumPay] = useState<number>(0);
+  const [result, setResultPay] = useState<boolean>(false);
+  const [state, setStatePay] = useState<boolean>(false);
 
   function handleChangeNumber(event) {
-    setNumber(event.target.value);
+    setNumberPhone(event.target.value);
   }
 
   function handleChangeSum(event) {
-    setSum(event.target.value);
+    setSumPay(event.target.value);
   }
 
-  const PayFormSubmit = (e) => {
-    e.preventDefault();
+  const payFormSubmit = (event) => {
+    event.preventDefault();
     if (Math.random() * (1 - 0) > 0.5 ) {
-      setResult(true);
-      setState(true);
+      setResultPay(true);
+      setStatePay(true);
       setTimeout(() => {
         router.push(`/`);
       }, 1500);
     } else {
-      setResult(false);
-      setState(true);
+      setResultPay(false);
+      setStatePay(true);
     }
   };
 
   return (
-    <form
-      name="paymentForm"
-      className={styles.paymentForm}
-      onSubmit={PayFormSubmit}
-    >
-      <span className={styles.paymentForm__span}>Номер телефона</span>
+    <form name="paymentForm" className={styles.paymentForm} onSubmit={payFormSubmit}>
+      <InputSpan>Номер телефона</InputSpan>
       <InputMask
         mask="8(999)999-99-99"
         className={styles.paymentForm__input}
@@ -51,7 +48,7 @@ export default function Pay() {
         pattern="8\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
         onChange={handleChangeNumber}
       />
-      <span className={styles.paymentForm__span}>Сумма пополнения</span>
+      <InputSpan>Сумма пополнения</InputSpan>
       <input
         className={styles.paymentForm__input}
         type="number"
@@ -63,10 +60,12 @@ export default function Pay() {
         onChange={handleChangeSum}
       />
       <div className={styles.paymentForm__result}></div>
-      <button type="submit" className={styles.paymentForm__button}>
-        Оплатить
-      </button>
+      <Button>
+      Оплатить
+      </Button>
       <PayResult state={state} result={result} />
     </form>
   );
 }
+
+export default Pay;
