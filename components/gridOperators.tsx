@@ -1,11 +1,12 @@
 import React from "react";
-import Operator from "./operator";
+import {Operator} from "./operator";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { IOperator } from "../interfaces/interfaces";
 
-const GridOperators = () => {
+
+export const GridOperators = () => {
   const [operators, setOperators] = useState<IOperator[]>([]);
 
   async function getOperators() {
@@ -29,4 +30,4 @@ const GridOperators = () => {
   );
 };
 
-export default GridOperators;
+

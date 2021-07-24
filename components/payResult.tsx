@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css';
 import { IResult } from '../interfaces/interfaces';
 
-const PayResult = (props:IResult) => {
+export const PayResult = (props:IResult) => {
 
     return(
         <section className={props.state==true ?styles.payResultActive: styles.payResult  }>
@@ -18,4 +18,3 @@ const PayResult = (props:IResult) => {
     )
 }
 
-export default PayResult;

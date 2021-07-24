@@ -1,5 +1,5 @@
-import General from "../components/general";
-import GridOperators from "../components/gridOperators";
+import {General} from "../components/general";
+import {GridOperators} from "../components/gridOperators";
 
 const Home = () => {
   return (
@@ -10,3 +10,5 @@ const Home = () => {
 }
 
 export default Home;
+
+

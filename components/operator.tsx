@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css"
 import { IOperator} from "../interfaces/interfaces";
 
 
-const Operator = ({id, name, pictureUrl}: IOperator) => {
+export const Operator = ({id, name, pictureUrl}: IOperator) => {
   const router = useRouter();
   return (
     <a className={styles.operator} key={id} onClick={() => router.push(`/operator/${id}`)} >
@@ -19,4 +19,3 @@ const Operator = ({id, name, pictureUrl}: IOperator) => {
   );
 }
 
-export default Operator;

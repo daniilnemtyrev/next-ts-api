@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import { useRouter } from "next/dist/client/router";
 import { IChildren } from "../interfaces/interfaces";
 
-const General = ({ children}: IChildren) => {
+export const General = ({ children}: IChildren) => {
   const router = useRouter();
   
   return (
@@ -31,4 +31,3 @@ const General = ({ children}: IChildren) => {
   );
 }
 
-export default General;

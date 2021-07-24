@@ -7,7 +7,7 @@ import { InputSpan } from "../styled.components/styled.components";
 
 
 
-const AddOperator = () => {
+export const AddOperator = () => {
   const router = useRouter();
   const [name, setName] = useState<string>("");
   const [pictureUrl, setPictureUrl] = useState<string>("");
@@ -20,8 +20,8 @@ const AddOperator = () => {
     setPictureUrl(event.target.value);
   };
 
-  const buttonPut = async () => {
-    router.push(`/`);
+  const buttonPut = async (e) => {
+    e.preventDefault();
     try {
       await fetch("http://localhost:3000/operator", {
         method: "POST",
@@ -37,6 +37,7 @@ const AddOperator = () => {
     } catch (error) {
       console.error("Ошибка:", error);
     }
+    router.push(`/`);
   };
 
  
@@ -68,4 +69,4 @@ const AddOperator = () => {
   );
 };
 
-export default AddOperator;
+

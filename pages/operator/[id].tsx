@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "../../styles/Home.module.css";
-import General from "../../components/general";
-import Pay from "../../components/payOperator";
+import {General} from "../../components/general";
+import {Pay} from "../../components/payOperator";
 import { IOperatorPay } from "../../interfaces/interfaces";
 import { IOperator } from "../../interfaces/interfaces";
 

@@ -2,10 +2,10 @@ import { useRouter } from "next/dist/client/router";
 import InputMask from "react-input-mask";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
-import PayResult from "./payResult"
+import {PayResult} from "./payResult"
 import { Button, InputSpan } from "../styled.components/styled.components";
 
-const Pay = () => {
+export const Pay = () => {
   const router = useRouter();
   const [number, setNumberPhone] = useState<string>("");
   const [sum, setSumPay] = useState<number>(0);
@@ -68,4 +68,4 @@ const Pay = () => {
   );
 }
 
-export default Pay;
+
