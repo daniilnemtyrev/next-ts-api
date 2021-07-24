@@ -26,7 +26,7 @@ const OperatorId = ({ operator }:IdOperator) => {
 }
 
 export async function getServerSideProps({query}:IOperatorPay) {
-    const res = await fetch(`http://localhost:3000/operator/${query.id}`);
+    const res = await fetch(`https://operatorapi.herokuapp.com/operator/${query.id}`);
     const operator: IOperator = await res.json();
 
     if (!operator) {

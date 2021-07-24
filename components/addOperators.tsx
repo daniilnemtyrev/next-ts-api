@@ -23,7 +23,7 @@ export const AddOperator = () => {
   const buttonPut = async (e:{preventDefault:() => void}) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:3000/operator", {
+      await fetch("https://operatorapi.herokuapp.com/operator", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",

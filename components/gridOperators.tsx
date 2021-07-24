@@ -10,7 +10,7 @@ export const GridOperators = () => {
   const [operators, setOperators] = useState<IOperator[]>([]);
 
   async function getOperators() {
-    let response = await fetch("http://localhost:3000/operator");
+    let response = await fetch("https://operatorapi.herokuapp.com/operator");
     let operator = await response.json();
     setOperators(operator);
   }
