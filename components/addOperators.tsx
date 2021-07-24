@@ -12,15 +12,15 @@ export const AddOperator = () => {
   const [name, setName] = useState<string>("");
   const [pictureUrl, setPictureUrl] = useState<string>("");
 
-  const handleChangeNameOperator = (event) => {
+  const handleChangeNameOperator = (event:{target:{value:string}}) => {
     setName(event.target.value);
   };
 
-  const handleChangePictureUrlOperator = (event) => {
+  const handleChangePictureUrlOperator = (event:{target:{value:string}}) => {
     setPictureUrl(event.target.value);
   };
 
-  const buttonPut = async (e) => {
+  const buttonPut = async (e:{preventDefault:() => void}) => {
     e.preventDefault();
     try {
       await fetch("http://localhost:3000/operator", {

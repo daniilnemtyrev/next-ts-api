@@ -12,15 +12,15 @@ export const Pay = () => {
   const [result, setResultPay] = useState<boolean>(false);
   const [state, setStatePay] = useState<boolean>(false);
 
-  function handleChangeNumber(event) {
+  function handleChangeNumber(event:{target:{value:string}}) {
     setNumberPhone(event.target.value);
   }
 
-  function handleChangeSum(event) {
-    setSumPay(event.target.value);
+  const handleChangeSum = (event:{target:{value:string}}) => {
+    setSumPay(Number(event.target.value));
   }
 
-  const payFormSubmit = (event) => {
+  const payFormSubmit = (event:{preventDefault:() => void}) => {
     event.preventDefault();
     if (Math.random() * (1 - 0) > 0.5 ) {
       setResultPay(true);
