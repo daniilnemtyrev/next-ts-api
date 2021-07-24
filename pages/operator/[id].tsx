@@ -5,7 +5,11 @@ import {Pay} from "../../components/payOperator";
 import { IOperatorPay } from "../../interfaces/interfaces";
 import { IOperator } from "../../interfaces/interfaces";
 
-const OperatorId = ({ operator }) => {
+interface IdOperator {
+  operator: IOperator
+}
+
+const OperatorId = ({ operator }:IdOperator) => {
    
   return (
     <General>
