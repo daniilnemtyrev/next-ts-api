@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import { useRouter } from "next/dist/client/router";
@@ -12,15 +12,15 @@ export const AddOperator = () => {
   const [name, setName] = useState<string>("");
   const [pictureUrl, setPictureUrl] = useState<string>("");
 
-  const handleChangeNameOperator = (event:{target:{value:string}}) => {
+  const handleChangeNameOperator = (event:ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
 
-  const handleChangePictureUrlOperator = (event:{target:{value:string}}) => {
+  const handleChangePictureUrlOperator = (event:ChangeEvent<HTMLInputElement>) => {
     setPictureUrl(event.target.value);
   };
 
-  const buttonPut = async (e:{preventDefault:() => void}) => {
+  const buttonPut = async (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await fetch("https://operatorapi.herokuapp.com/operator", {
@@ -45,7 +45,7 @@ export const AddOperator = () => {
     <form className={styles.addOperator} onSubmit={buttonPut}>
       <InputSpan>Оператор</InputSpan>
       <input
-        type="string"
+        type="text"
         required
         placeholder="Название оператора"
         className={styles.addOperator__input}
@@ -54,7 +54,7 @@ export const AddOperator = () => {
       />
       <InputSpan>Логотип</InputSpan>
       <input
-        type="link"
+        type="text"
         required
         placeholder="Ссылка на логотип"
         pattern="https?:\/\/(www.)?(\w*\W*)*"

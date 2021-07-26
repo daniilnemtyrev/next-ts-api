@@ -4,6 +4,8 @@ import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import {PayResult} from "./payResult"
 import { Button, InputSpan } from "../styled.components/styled.components";
+import { FormEvent } from "react";
+import { ChangeEvent } from "react";
 
 export const Pay = () => {
   const router = useRouter();
@@ -12,15 +14,15 @@ export const Pay = () => {
   const [result, setResultPay] = useState<boolean>(false);
   const [state, setStatePay] = useState<boolean>(false);
 
-  function handleChangeNumber(event:{target:{value:string}}) {
+  function handleChangeNumber(event:ChangeEvent<HTMLInputElement>) {
     setNumberPhone(event.target.value);
   }
 
-  const handleChangeSum = (event:{target:{value:string}}) => {
+  const handleChangeSum = (event:ChangeEvent<HTMLInputElement>) => {
     setSumPay(Number(event.target.value));
   }
 
-  const payFormSubmit = (event:{preventDefault:() => void}) => {
+  const payFormSubmit = (event:FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (Math.random() * (1 - 0) > 0.5 ) {
       setResultPay(true);
@@ -42,7 +44,7 @@ export const Pay = () => {
         className={styles.paymentForm__input}
         required
         placeholder="8(999)999-99-99"
-        type="string"
+        type="text"
         name="phone"
         value={number}
         pattern="8\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
@@ -51,7 +53,7 @@ export const Pay = () => {
       <InputSpan>Сумма пополнения</InputSpan>
       <input
         className={styles.paymentForm__input}
-        type="number"
+        type="text"
         min="1"
         max="1000"
         required
